@@ -19,15 +19,11 @@ Task 2: Create and Delete a PDB
 
 Create another PDB named in the format FirstTwoLettersOfName_to_delete_pdb_StudentID.  
 Delete the PDB after creation.  
-Provide screenshots of both the creation and deletion processes.
 
 
 Task 3: Oracle Enterprise Manager  
 
 Configure Oracle Enterprise Manager (OEM).  
-Provide a screenshot of the OEM dashboard showing the username clearly after completing Tasks 1 and 2.
-
-
 
 Steps Performed
 Task 1: Create a New Pluggable Database (PDB)
@@ -52,10 +48,11 @@ Screenshot: Screenshots/create pluggable database.jpg
 
 Task 2: Create and Delete a PDB
 
-PDB Creation:
-Created a second PDB using:CREATE PLUGGABLE DATABASE er_to_delete_pdb_2024101
-ADMIN USER eric_plsqlauca_2024101 IDENTIFIED BY simplepassword
-FILE_NAME_CONVERT = ('/pdbseed/', '/er_to_delete_pdb_2024101/');
+PDB Creation and dropping :
+Created a second PDB using:CREATE PLUGGABLE DATABASE be_to_delete_pdb_29143
+and dropped it.
+ADMIN USER benon_plsqlauca_29143 IDENTIFIED BY simplepassword
+FILE_NAME_CONVERT = ('/pdbseed/', '/be_to_delete_pdb_29143/');
 
 
 Opened the PDB:ALTER PLUGGABLE DATABASE er_to_delete_pdb_2024101 OPEN;
@@ -63,63 +60,22 @@ Opened the PDB:ALTER PLUGGABLE DATABASE er_to_delete_pdb_2024101 OPEN;
 
 Verified the creation:SELECT pdb_name, status FROM dba_pdbs;
 
-
-Screenshot: 
-
-PDB Deletion:
-Deleted the PDB using:DROP PLUGGABLE DATABASE er_to_delete_pdb_2024101 INCLUDING DATAFILES;
-
-
-Verified the deletion:SELECT pdb_name, status FROM dba_pdbs;
-
-
-Screenshot of the deletion is saved as task2_pdb_deletion.png in the screenshots folder.
-
+Screenshot: Screenshots/drop pluggable.PNG
 
 
 Task 3: Oracle Enterprise Manager
 
 OEM Configuration:
-Accessed Oracle Enterprise Manager by navigating to the OEM URL (e.g., https://<hostname>:5500/em).
+Accessed Oracle Enterprise Manager by navigating to the OEM URL.
 Logged in using the SYSTEM user credentials.
-Configured OEM to monitor the Container Database (CDB) and the newly created PDB (er_pdb_2024101).
+Configured OEM to monitor the Container Database (CDB) and the newly created PDB (be_pdb_29143).
 Verified that the PDBs and user details were visible in the OEM dashboard.
 
 
-Screenshot: A screenshot of the OEM dashboard, clearly showing the username (eric_plsqlauca_2024101), is saved as task3_oem_dashboard.png in the screenshots folder.
+Screenshot: Screenshots/Configuration of oem.PNG
 
-Issues Encountered and Resolutions
-
-Issue 1: Permission error while creating the PDB.  
-Resolution: Ensured the session was connected as SYS with SYSDBA privileges using sqlplus / as sysdba.
-
-
-Issue 2: OEM URL was inaccessible initially.  
-Resolution: Verified that the OEM service was running using emctl status dbconsole and started it with emctl start dbconsole if necessary.
-
-
-Issue 3: PDB creation failed due to incorrect FILE_NAME_CONVERT path.  
-Resolution: Corrected the file path to match the Oracle database directory structure.
-
-
-
-Screenshots
 All required screenshots are stored in the screenshots folder:
-
-task1_pdb_creation.png: Shows the creation of er_pdb_2024101.
-task2_pdb_creation.png: Shows the creation of er_to_delete_pdb_2024101.
-task2_pdb_deletion.png: Shows the deletion of er_to_delete_pdb_2024101.
-task3_oem_dashboard.png: Shows the OEM dashboard with the username visible.
 
 Submission
 
 This repository is public and contains all required files and screenshots.
-The repository link will be shared via email before the deadline: 11:59 PM on the same day of the class next week.
-
-Grading
-The assignment is graded out of 5 points:
-
-Task 1: 2 points
-Task 2: 2 points
-Task 3: 1 point
-
