@@ -10,14 +10,14 @@ The assignment consists of three main tasks:
 
 Task 1: Create a New Pluggable Database (PDB)  
 
-Create a PDB named in the format FirstTwoLettersOfFirstName_pdb_StudentID.  
-Create a user account with the format FirstName_plsqlauca_StudentID and assign a simple password.  
+Create a PDB named in the format FirstTwoLettersOfBenon_pdb_29143.  
+Create a user account with the format Benon_plsqlauca_29143 and assign a simple password.  
 This account will store all classwork.
 
 
 Task 2: Create and Delete a PDB  
 
-Create another PDB named in the format FirstTwoLettersOfName_to_delete_pdb_StudentID.  
+Create another PDB named in the format FirstTwoLettersOf be_to_delete_pdb_StudentID.  
 Delete the PDB after creation.  
 
 
@@ -30,13 +30,13 @@ Task 1: Create a New Pluggable Database (PDB)
 
 PDB Creation:
 Connected to the Oracle Database as a user with administrative privileges.
-Executed the following SQL command to create the *PDB:CREATE PLUGGABLE DATABASE er_pdb_2024101
-ADMIN USER eric_plsqlauca_2024101 IDENTIFIED BY simplepassword
+Executed the following SQL command to create the *PDB:CREATE PLUGGABLE DATABASE be_pdb_29143
+ADMIN USER Benon_plsqlauca_29143 IDENTIFIED BY simplepassword
 ROLES = (DBA)
-FILE_NAME_CONVERT = ('/pdbseed/', '/er_pdb_2024101/');
+FILE_NAME_CONVERT = ('/pdbseed/', '/be_pdb_29143/');
 
 
-Opened the PDB:ALTER PLUGGABLE DATABASE er_pdb_2024101 OPEN;
+Opened the PDB:ALTER PLUGGABLE DATABASE be_pdb_29143 OPEN;
 
 
 Verified the PDB creation using:SELECT pdb_name, status FROM dba_pdbs;
@@ -55,7 +55,7 @@ ADMIN USER benon_plsqlauca_29143 IDENTIFIED BY simplepassword
 FILE_NAME_CONVERT = ('/pdbseed/', '/be_to_delete_pdb_29143/');
 
 
-Opened the PDB:ALTER PLUGGABLE DATABASE er_to_delete_pdb_2024101 OPEN;
+Opened the PDB:ALTER PLUGGABLE DATABASE be_to_delete_pdb_29143 OPEN;
 
 
 Verified the creation:SELECT pdb_name, status FROM dba_pdbs;
