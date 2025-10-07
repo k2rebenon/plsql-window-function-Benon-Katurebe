@@ -48,7 +48,7 @@ Verified the PDB creation using:SELECT pdb_name, status FROM dba_pdbs;
 
 
 
-Screenshot:
+Screenshot: Screenshots/create pluggable database.jpg
 
 Task 2: Create and Delete a PDB
 
@@ -64,8 +64,7 @@ Opened the PDB:ALTER PLUGGABLE DATABASE er_to_delete_pdb_2024101 OPEN;
 Verified the creation:SELECT pdb_name, status FROM dba_pdbs;
 
 
-Screenshot of the creation is saved as task2_pdb_creation.png in the screenshots folder.
-
+Screenshot: 
 
 PDB Deletion:
 Deleted the PDB using:DROP PLUGGABLE DATABASE er_to_delete_pdb_2024101 INCLUDING DATAFILES;
